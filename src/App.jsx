@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Books from "./pages/Books";
 import Blogs from "./pages/Blogs";
 import Poetry from "./pages/Poetry";
+import BlogDetail from "./pages/BlogDetail";
+import PoemDetail from "./pages/PoemDetail";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -17,7 +19,9 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/poetry/:slug" element={<PoemDetail />} />
             <Route path="/blogs" element={<Blogs />} />
           <Route path="/poetry" element={<Poetry />} />
         </Routes>
