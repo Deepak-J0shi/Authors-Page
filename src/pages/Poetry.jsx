@@ -6,7 +6,7 @@ import poetryHero from "../assets/poetry-hero.jpg";
 
 export default function Poetry() {
   const [poems, setPoems] = useState([]);
-  const [error, setError] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
     sanityClient
@@ -18,57 +18,37 @@ export default function Poetry() {
           "coverImage": coverImage.asset->url
         }`
       )
-      .then((data) => {
-        console.log("POEMS FROM SANITY >>>", data);
-        setPoems(data || []);
-      })
-      .catch((err) => {
-        console.error("SANITY POEM ERROR >>>", err);
-        setError(err.message || "Something went wrong");
-      });
+      .then(setPoems);
   }, []);
 
   return (
-    <section className="poetry-page">
-      <h1 className="poetry-heading">Read My Poetry</h1>
+    <section className="max-w-6xl mx-auto px-8 py-20">
+      <h1 className="font-heading text-4xl text-center mb-14">
+        Read My Poetry
+      </h1>
 
-      {/* Hero image */}
-      <div className="poetry-hero-wrapper">
-        <div className="poetry-hero-frame">
-          <img
-            src={poetryHero}
-            alt="Writing poetry"
-            className="poetry-hero-image"
-          />
-        </div>
+      <div className="border border-frame p-6 mb-20">
+        <img src={poetryHero} alt="" className="w-full" />
       </div>
 
-      {error && (
-        <p style={{ color: "red", marginTop: "1rem" }}>
-          Error loading poems: {error}
-        </p>
-      )}
-
-      {/* Poem cards */}
-      <div className="poetry-grid">
-        {poems.map((poem) => (
+      <div className="grid grid-cols-3 gap-12">
+        {poems.slice(0, visibleCount).map((poem) => (
           <Link
             key={poem._id}
             to={`/poetry/${poem.slug}`}
-            className="poem-card"
+            className="border border-frame p-6 hover:bg-frame/30 transition"
           >
-            <div className="poem-card-inner">
-              {poem.coverImage && (
-                <img
-                  src={poem.coverImage}
-                  alt={poem.title}
-                  className="poem-card-image"
-                />
-              )}
+            {poem.coverImage && (
+              <img src={poem.coverImage} alt={poem.title} className="mb-6" />
+            )}
 
-              <h2 className="poem-title">{poem.title}</h2>
-              <span className="poem-cta">Read poem →</span>
-            </div>
+            <h2 className="font-heading">
+              {poem.title}
+            </h2>
+
+            <span className="text-sm mt-4 block">
+              Read poem →
+            </span>
           </Link>
         ))}
       </div>

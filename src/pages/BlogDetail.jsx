@@ -25,33 +25,29 @@ export default function BlogDetail() {
   if (!post) return null;
 
   return (
-    <section className="post-page">
-      <div className="post-inner">
-        {/* LEFT IMAGE */}
+    <section className="max-w-6xl mx-auto px-8 py-24">
+      <div className="grid grid-cols-2 gap-24 items-start">
         {post.coverImage && (
-          <div className="post-image-wrapper">
-            <div className="post-image-frame">
-              <img
-                src={post.coverImage}
-                alt={post.title}
-                className="post-image"
-              />
-            </div>
+          <div className="border border-frame p-6">
+            <img
+              src={post.coverImage}
+              alt={post.title}
+              className="w-full object-cover"
+            />
           </div>
         )}
 
-        {/* RIGHT CONTENT */}
-        <div className="post-content">
-          <h1 className="post-title">{post.title}</h1>
+        <div>
+          <h1 className="font-heading text-4xl mb-10">
+            {post.title}
+          </h1>
 
-          <div className="post-body">
+          <div className="space-y-6 text-muted leading-loose">
             <PortableText
               value={post.body}
               components={{
                 block: {
-                  normal: ({ children }) => (
-                    <p className="post-paragraph">{children}</p>
-                  ),
+                  normal: ({ children }) => <p>{children}</p>,
                 },
               }}
             />

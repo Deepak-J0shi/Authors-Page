@@ -25,32 +25,33 @@ export default function PoemDetail() {
   if (!poem) return null;
 
   return (
-    <section className="post-page">
-      <div className="post-inner">
+    <section className="max-w-6xl mx-auto px-8 py-24">
+      <div className="grid grid-cols-2 gap-24 items-start">
+        
         {/* LEFT IMAGE */}
         {poem.coverImage && (
-          <div className="post-image-wrapper">
-            <div className="post-image-frame">
-              <img
-                src={poem.coverImage}
-                alt={poem.title}
-                className="post-image"
-              />
-            </div>
+          <div className="border border-frame p-6">
+            <img
+              src={poem.coverImage}
+              alt={poem.title}
+              className="w-full object-cover"
+            />
           </div>
         )}
 
-        {/* RIGHT: POEM */}
-        <div className="post-content">
-          <h1 className="post-title">{poem.title}</h1>
+        {/* RIGHT CONTENT */}
+        <div>
+          <h1 className="font-heading text-4xl mb-12">
+            {poem.title}
+          </h1>
 
-          <div className="post-poem">
+          <div className="space-y-4 text-muted leading-loose">
             <PortableText
               value={poem.body}
               components={{
                 block: {
                   normal: ({ children }) => (
-                    <p className="post-poem-line">{children}</p>
+                    <p>{children}</p>
                   ),
                 },
               }}

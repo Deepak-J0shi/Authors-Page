@@ -1,49 +1,18 @@
-// src/components/Header.jsx
 import { NavLink } from "react-router-dom";
 
-function Header() {
+export default function Header() {
   return (
-    <header className="nav">
-      <div className="nav-logo">Deepak Joshi</div>
-      <nav className="nav-links">
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          home
-        </NavLink>
+    <header className="flex items-center justify-between px-[7vw] py-6">
+      <div className="font-heading text-lg tracking-widest">
+        Deepak Joshi
+      </div>
 
-        <NavLink
-          to="/blogs"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          blogs
-        </NavLink>
-
-        <NavLink
-          to="/poetry"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          poetry
-        </NavLink>
-
-        <NavLink
-          to="/books"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          books
-        </NavLink>
-
-        {/* <NavLink
-          to="/connect"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          connect
-        </NavLink> */}
+      <nav className="flex gap-7 font-heading text-sm lowercase">
+        <NavLink to="/" end>home</NavLink>
+        <NavLink to="/blogs">blogs</NavLink>
+        <NavLink to="/poetry">poetry</NavLink>
+        <NavLink to="/books">books</NavLink>
       </nav>
     </header>
   );
 }
-
-export default Header;

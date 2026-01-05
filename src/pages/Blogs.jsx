@@ -6,7 +6,8 @@ import blogsHero from "../assets/blogs-hero.jpg";
 
 export default function Blogs() {
   const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     sanityClient
@@ -20,64 +21,54 @@ export default function Blogs() {
         }`
       )
       .then((data) => {
-        console.log("BLOGS FROM SANITY >>>", data);
         setPosts(data || []);
-      })
-      .catch((err) => {
-        console.error("SANITY BLOG ERROR >>>", err);
-        setError(err.message || "Something went wrong");
+        setLoading(false);
       });
   }, []);
 
-  return (
-    <section className="blogs-page">
-      <h1 className="blogs-heading">Read My Blogs</h1>
+  const visiblePosts = posts.slice(0, visibleCount);
 
-      {/* Hero image */}
-      <div className="blogs-hero-wrapper">
-        <div className="blogs-hero-frame">
-          <img
-            src={blogsHero}
-            alt="Reading a book"
-            className="blogs-hero-image"
-          />
-        </div>
+  return (
+    <section className="max-w-6xl mx-auto px-8 py-20">
+      <h1 className="font-heading text-4xl text-center mb-14">
+        Read My Blogs
+      </h1>
+
+      <div className="border border-frame p-6 mb-20">
+        <img src={blogsHero} alt="" className="w-full" />
       </div>
 
-      {error && (
-        <p style={{ color: "red", marginTop: "1rem" }}>
-          Error loading blogs: {error}
-        </p>
-      )}
-
-      {/* Blog cards */}
-      <div className="blogs-grid">
-        {posts.map((blog) => (
-          <Link
-            key={blog._id}
-            to={`/blogs/${blog.slug}`}
-            className="blog-card"
-          >
-            <div className="blog-card-inner">
+      {!loading && (
+        <div className="grid grid-cols-3 gap-12">
+          {visiblePosts.map((blog) => (
+            <Link
+              key={blog._id}
+              to={`/blogs/${blog.slug}`}
+              className="border border-frame p-6 hover:bg-frame/30 transition"
+            >
               {blog.coverImage && (
                 <img
                   src={blog.coverImage}
                   alt={blog.title}
-                  className="blog-card-image"
+                  className="mb-6"
                 />
               )}
 
-              <h2 className="blog-title">{blog.title}</h2>
+              <h2 className="font-heading text-lg mb-3">
+                {blog.title}
+              </h2>
 
               {blog.excerpt && (
-                <p className="blog-description">{blog.excerpt}</p>
+                <p className="text-muted text-sm mb-4">
+                  {blog.excerpt}
+                </p>
               )}
 
-              <span className="blog-cta">Read blog →</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+              <span className="text-sm">Read blog →</span>
+            </Link>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
