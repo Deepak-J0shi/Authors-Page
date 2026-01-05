@@ -1,2 +1,5 @@
 .env
 sanity-work
+node_modules/
+.env
+dist/
