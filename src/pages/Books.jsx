@@ -1,5 +1,5 @@
 // src/pages/Books.jsx
-import { books, booksBannerText } from "../data/books";
+import { books, booksBannerText } from "../books";
 
 export default function Books() {
   return (
