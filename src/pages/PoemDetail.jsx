@@ -25,38 +25,40 @@ export default function PoemDetail() {
   if (!poem) return null;
 
   return (
-    <section className="max-w-6xl mx-auto px-8 py-24">
-      <div className="grid grid-cols-2 gap-24 items-start">
+    <section className="max-w-6xl mx-auto px-6 md:px-8 py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         
-        {/* LEFT IMAGE */}
+        {/* LEFT: STICKY IMAGE */}
         {poem.coverImage && (
-          <div className="border border-frame p-6">
-            <img
-              src={poem.coverImage}
-              alt={poem.title}
-              className="w-full object-cover"
-            />
+          <div className="md:sticky md:top-32 self-start">
+            <div className="border border-frame p-4">
+              <img
+                src={poem.coverImage}
+                alt={poem.title}
+                className="w-full object-cover"
+              />
+            </div>
           </div>
         )}
 
-        {/* RIGHT CONTENT */}
+        {/* RIGHT: SCROLLING POEM */}
         <div>
           <h1 className="font-heading text-4xl mb-12">
             {poem.title}
           </h1>
 
-          <div className="space-y-4 text-muted leading-loose">
-            <PortableText
-              value={poem.body}
-              components={{
-                block: {
-                  normal: ({ children }) => (
-                    <p>{children}</p>
-                  ),
-                },
-              }}
-            />
-          </div>
+          <PortableText
+            value={poem.body}
+            components={{
+              block: {
+                normal: ({ children }) => (
+                  <p className="text-muted leading-loose mb-4">
+                    {children}
+                  </p>
+                ),
+              },
+            }}
+          />
         </div>
       </div>
     </section>

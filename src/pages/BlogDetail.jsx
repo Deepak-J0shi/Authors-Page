@@ -25,21 +25,23 @@ export default function BlogDetail() {
   if (!post) return null;
 
   return (
-    <section className="max-w-6xl mx-auto px-8 py-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
+    <section className="max-w-6xl mx-auto px-6 md:px-8 py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         
-        {/* Image */}
+        {/* LEFT: STICKY IMAGE */}
         {post.coverImage && (
-          <div className="border border-frame p-6">
-            <img
-              src={post.coverImage}
-              alt={post.title}
-              className="w-full object-cover"
-            />
+          <div className="md:sticky md:top-32 self-start">
+            <div className="border border-frame p-4">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full object-cover"
+              />
+            </div>
           </div>
         )}
 
-        {/* Content */}
+        {/* RIGHT: SCROLLING CONTENT */}
         <div>
           <h1 className="font-heading text-4xl mb-10">
             {post.title}
@@ -50,19 +52,19 @@ export default function BlogDetail() {
             components={{
               block: {
                 h1: ({ children }) => (
-                  <h1 className="font-heading text-3xl mt-12 mb-6">
-                    {children}
-                  </h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="font-heading text-2xl mt-10 mb-5">
+                  <h2 className="font-heading text-3xl mt-14 mb-6">
                     {children}
                   </h2>
                 ),
-                h3: ({ children }) => (
-                  <h3 className="font-heading text-xl mt-8 mb-4">
+                h2: ({ children }) => (
+                  <h3 className="font-heading text-2xl mt-12 mb-5">
                     {children}
                   </h3>
+                ),
+                h3: ({ children }) => (
+                  <h4 className="font-heading text-xl mt-10 mb-4">
+                    {children}
+                  </h4>
                 ),
                 normal: ({ children }) => (
                   <p className="text-muted leading-loose mb-6">
