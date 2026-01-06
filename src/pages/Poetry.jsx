@@ -18,7 +18,8 @@ export default function Poetry() {
           "coverImage": coverImage.asset->url
         }`
       )
-      .then(setPoems);
+      .then((data) => setPoems(data || []))
+      .catch(console.error);
   }, []);
 
   return (
@@ -28,30 +29,49 @@ export default function Poetry() {
       </h1>
 
       <div className="border border-frame p-6 mb-20">
-        <img src={poetryHero} alt="" className="w-full" />
+        <img
+          src={poetryHero}
+          alt="Poetry hero"
+          className="w-full h-[520px] object-cover"
+        />
       </div>
 
-      <div className="grid grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {poems.slice(0, visibleCount).map((poem) => (
           <Link
             key={poem._id}
             to={`/poetry/${poem.slug}`}
-            className="border border-frame p-6 hover:bg-frame/30 transition"
+            className="border border-frame p-6 transition hover:translate-y-[-4px] hover:bg-frame/30"
           >
             {poem.coverImage && (
-              <img src={poem.coverImage} alt={poem.title} className="mb-6" />
+              <img
+                src={poem.coverImage}
+                alt={poem.title}
+                className="w-full aspect-[3/4] object-cover mb-6"
+              />
             )}
 
-            <h2 className="font-heading">
+            <h2 className="font-heading text-lg mb-2">
               {poem.title}
             </h2>
 
-            <span className="text-sm mt-4 block">
+            <span className="text-sm text-muted">
               Read poem →
             </span>
           </Link>
         ))}
       </div>
+
+      {poems.length > visibleCount && (
+        <div className="text-center mt-20">
+          <button
+            onClick={() => setVisibleCount((c) => c + 6)}
+            className="border border-text px-6 py-2 text-sm"
+          >
+            Load more poems
+          </button>
+        </div>
+      )}
     </section>
   );
 }

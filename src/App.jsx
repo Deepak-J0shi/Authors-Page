@@ -7,6 +7,7 @@ import Blogs from "./pages/Blogs";
 import Poetry from "./pages/Poetry";
 import BlogDetail from "./pages/BlogDetail";
 import PoemDetail from "./pages/PoemDetail";
+import Contact from "./pages/Contact";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -23,6 +24,8 @@ function App() {
           <Route path="/poetry" element={<Poetry />} />
           <Route path="/poetry/:slug" element={<PoemDetail />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/contact" element={<Contact />} />
+
         </Routes>
       </main>
 

@@ -1,30 +1,36 @@
 // src/data/books.js
 
+import book1 from "../assets/book1.jpg";
+import book2 from "../assets/book2.jpg";
+import book3 from "../assets/book3.jpg";
+
 export const booksBannerText = "My next book is coming out soon!";
 
 export const books = [
   {
     id: 1,
-    title: "Book 1",
+    title: "Yellow Days",
     description:
-      "A short line about Book 1. You can describe the theme, mood or genre here.",
-    buyLink: "https://www.amazon.in/Poetry-book-Yellow-Writers-Pocket/dp/9360838276",
-    image: "/src/assets/books/book1.jpg",
+      "A curated collection of poems by multiple poets, including my own contributions. The book explores diverse emotions, voices, and perspectives, woven together through shared themes of life and reflection.",
+    buyLink:
+      "https://www.amazon.in/Poetry-book-Yellow-Writers-Pocket/dp/9360838276",
+    image: book1,
   },
   {
     id: 2,
-    title: "Book 2",
+    title: "120 Amazing Poems",
     description:
-      "One–two lines about Book 2. Maybe poetry, short stories or essays.",
-    buyLink: "https://www.amazon.in/dp/8197015538?ref_=cm_sw_r_apan_dp_6KJ774PFPW4SJXTYXW7Z&language=hi-IN",
-    image: "/src/assets/books/book2.jpg",
+      "A poetry collection featuring a complete section written by me, focused on love, grief, healing, and the journey of overcoming emotional depths through words.",
+    buyLink:
+      "https://www.amazon.in/dp/8197015538?ref_=cm_sw_r_apan_dp_6KJ774PFPW4SJXTYXW7Z&language=hi-IN",
+    image: book2,
   },
   {
     id: 3,
-    title: "Book 3",
+    title: "Us",
     description:
-      "Description for Book 3. You can change this text anytime in this file.",
+      "An upcoming poetry collection inspired by real-life moments and relationships. These poems reflect intimacy, distance, longing, and the quiet truths we live but rarely speak.",
     buyLink: "https://example.com/book-3",
-    image: "/src/assets/books/book3.jpg",
+    image: book3,
   },
 ];
