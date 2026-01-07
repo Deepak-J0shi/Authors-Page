@@ -30,7 +30,7 @@ export const books = [
     title: "Us",
     description:
       "An upcoming poetry collection inspired by real-life moments and relationships. These poems reflect intimacy, distance, longing, and the quiet truths we live but rarely speak.",
-    buyLink: "https://example.com/book-3",
+    buyLink: "https://authors-page-iota.vercel.app/books",
     image: book3,
   },
 ];

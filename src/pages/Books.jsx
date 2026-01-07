@@ -42,7 +42,7 @@ export default function Books() {
 
             {/* CTA */}
             <span className="block text-sm text-center">
-              Buy / Read more →
+              Buy →
             </span>
           </a>
         ))}
