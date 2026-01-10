@@ -8,10 +8,10 @@ This website showcases my **blogs, poetry, books, and personal writing journey**
 ## **Live Demo**
 
 **Website:**
-👉 [https://authors-page-iota.vercel.app/](https://authors-page-iota.vercel.app/)
+[https://authors-page-iota.vercel.app/](https://authors-page-iota.vercel.app/)
 
-<img width="1366" height="649" alt="image" src="https://github.com/user-attachments/assets/d78ed5ca-43f3-4bc9-af88-81ec1a0f3d6f" />
 
+<img width="1366" height="648" alt="image" src="https://github.com/user-attachments/assets/4fc64b00-7e1d-49c2-8c24-ee031105d762" />
 
 ---
 
