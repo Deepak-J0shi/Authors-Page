@@ -1,8 +1,7 @@
-// src/pages/Blogs.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { sanityClient } from "../sanityClient";
-import blogsHero from "../assets/blogs-hero.jpg";
+import blogsHero from "../assets/deepak-blogs.jpg";
 
 export default function Blogs() {
   const [posts, setPosts] = useState([]);
@@ -32,40 +31,45 @@ export default function Blogs() {
 
   return (
     <section className="max-w-6xl mx-auto px-8 py-24">
-      {/* Page title */}
-      <h1 className="font-heading text-4xl text-center mb-12">
-        Read My Blogs
-      </h1>
+      
+      {/* ================= PAGE HEADER ================= */}
+      <header className="text-center mb-20">
+        <h1 className="font-heading text-4xl mb-6">
+          Read My Blogs
+        </h1>
 
-      {/* Hero image */}
-      <div className="border border-frame p-6 mb-10">
+        <p className="text-muted max-w-2xl mx-auto leading-relaxed">
+          A growing collection of personal essays, travel reflections,
+          and contemplative writing exploring love, nature, memory,
+          and lived experience Written by Deepak Joshi.
+        </p>
+      </header>
+
+      {/* ================= HERO IMAGE ================= */}
+      <div className="border border-frame p-6 mb-24">
         <img
           src={blogsHero}
-          alt="Writing desk"
+          alt="Writing desk and notebook"
           className="w-full h-[420px] object-cover"
         />
       </div>
 
-      {/* Intro line */}
-      <p className="text-center text-muted max-w-xl mx-auto mb-20">
-        A collection of reflections, fragments, and quiet thoughts
-        written over time.
-      </p>
-
-      {/* Loading */}
+      {/* ================= LOADING ================= */}
       {loading && (
-        <p className="text-center text-muted">Loading blogs…</p>
+        <p className="text-center text-muted tracking-wide">
+          Gathering words…
+        </p>
       )}
 
-      {/* Blog grid */}
+      {/* ================= BLOG GRID ================= */}
       {!loading && visiblePosts.length > 0 && (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
             {visiblePosts.map((blog) => (
               <Link
                 key={blog._id}
                 to={`/blogs/${blog.slug}`}
-                className="border border-frame p-6 hover:bg-frame/30 transition"
+                className="group border border-frame p-6 transition hover:bg-frame/30"
               >
                 {blog.coverImage && (
                   <img
@@ -75,7 +79,7 @@ export default function Blogs() {
                   />
                 )}
 
-                <h2 className="font-heading text-lg mb-3">
+                <h2 className="font-heading text-lg mb-3 group-hover:underline underline-offset-4">
                   {blog.title}
                 </h2>
 
@@ -85,29 +89,32 @@ export default function Blogs() {
                   </p>
                 )}
 
-                <span className="text-sm">Read blog →</span>
+                <span className="text-xs uppercase tracking-widest text-text">
+                  Read →
+                </span>
               </Link>
             ))}
           </div>
 
-          {/* Load more */}
+          {/* ================= LOAD MORE ================= */}
           {canLoadMore && (
-            <div className="flex justify-center mt-20">
+            <div className="flex justify-center mt-24">
               <button
                 onClick={() => setVisibleCount((c) => c + 6)}
-                className="border border-text px-6 py-2 text-sm hover:bg-frame/30 transition"
+                className="border border-text px-8 py-2 text-sm tracking-wider hover:bg-frame/30 transition"
               >
-                Load more blogs
+                Load more writings
               </button>
             </div>
           )}
         </>
       )}
 
-      {/* Empty state */}
+      {/* ================= EMPTY STATE ================= */}
       {!loading && posts.length === 0 && (
-        <p className="text-center text-muted">
-          No blogs yet. Check back soon.
+        <p className="text-center text-muted max-w-md mx-auto leading-relaxed">
+          No writings published yet.  
+          New essays and reflections will appear here soon.
         </p>
       )}
     </section>
