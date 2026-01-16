@@ -4,7 +4,7 @@ import book1 from "../assets/book1.jpg";
 import book2 from "../assets/book2.jpg";
 import book3 from "../assets/book3.jpg";
 
-export const booksBannerText = "My next book is coming out soon!";
+export const booksBannerText = "I Was Never Me After You, is coming out soon!";
 
 export const books = [
   {
@@ -27,9 +27,9 @@ export const books = [
   },
   {
     id: 3,
-    title: "Us",
+    title: "I Was Never Me After You",
     description:
-      "An upcoming poetry collection inspired by real-life moments and relationships. These poems reflect intimacy, distance, longing, and the quiet truths we live but rarely speak.",
+      "I Was Never Me After You is a collection of poems and reflections that explores the different phases of life shaped by love, loss, and time.",
     buyLink: "https://authors-page-iota.vercel.app/books",
     image: book3,
   },

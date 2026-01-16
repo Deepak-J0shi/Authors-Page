@@ -48,7 +48,7 @@ export default function Home() {
             </button>
 
             <p className="mt-8 text-muted max-w-md leading-relaxed">
-              Deepak Joshi is an Indian poet, author, and computer science
+              Deepak Joshi pen name "nocturne", is an Indian poet, author, and computer science
               engineer. His writing explores speculative fiction poetry,
               reflective prose, and narrative essays rooted in love, nature,
               emotional healing, and lived experiences.
@@ -105,10 +105,10 @@ export default function Home() {
               Poetry
             </p>
             <h3 className="font-heading text-xl mb-4">
-              Us
+              I Was Never Me After You
             </h3>
             <p className="text-muted">
-              Poems inspired by real relationships and lived emotions.
+            My latest book, a collection of poems and reflections that explores the different phases of life shaped by love, loss, and time. Releasing soon
             </p>
           </div>
         </div>
@@ -126,9 +126,9 @@ export default function Home() {
         </p>
 
         <ul className="space-y-4 text-muted">
+          <li>— I Was Never Me After You (Upcoming Poetry Collection)</li>
           <li>— Yellow Days (Poetry Anthology)</li>
           <li>— 120 Amazing Poems (Contributor)</li>
-          <li>— Us (Upcoming Poetry Collection)</li>
         </ul>
       </section>
 
