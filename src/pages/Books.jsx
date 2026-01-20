@@ -1,66 +1,123 @@
-import { books, booksBannerText } from "../data/books";
+import { books } from "../data/books";
+import { Link } from "react-router-dom";
+import booksHero from "../assets/books-heroimage.jpg";
 
 export default function Books() {
+  const featuredBook = books[2];
+  const otherBooks = books;
+
   return (
-    <section className="max-w-6xl mx-auto px-8 py-24">
+    <>
+      {/* ================= HERO ================= */}
+      <section className="relative w-full min-h-[60vh] flex items-center">
+        {/* background */}
+        <img
+          src={booksHero}
+          alt="Books background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-bg/80" />
 
-      {/* ================= BANNER ================= */}
-      <header className="border border-frame px-10 py-8 text-center mb-16">
-        <h1 className="font-heading text-3xl mb-3">
-          {booksBannerText}
-        </h1>
+        {/* content */}
+        <div className="relative max-w-6xl mx-auto px-8 py-24 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-        <p className="text-muted max-w-xl mx-auto text-sm leading-relaxed">
-          A glimpse into my published work, collaborative anthologies,
-          and ongoing poetry projects inspired by real experiences.
-        </p>
-      </header>
-
-      {/* ================= BOOKS GRID ================= */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-
-        {books.map((book) => (
-          <a
-            key={book.id}
-            href={book.buyLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group border border-frame p-8 transition hover:bg-frame/30 hover:translate-y-[-4px]"
-          >
-
-            {/* COVER */}
-            <div className="mb-8 overflow-hidden">
-              <img
-                src={book.image}
-                alt={`${book.title} poetry book cover`}
-                className="w-full aspect-[3/4] object-cover transition group-hover:scale-[1.02]"
-              />
+            {/* BOOK */}
+            <div className="flex justify-center">
+              <div className="border border-frame bg-bg p-4 max-w-[280px]">
+                <img
+                  src={featuredBook.image}
+                  alt={featuredBook.title}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </div>
 
-            {/* TITLE */}
-            <h2 className="font-heading text-lg text-center mb-3">
-              {book.title}
-            </h2>
+            {/* TEXT */}
+            <div>
+              <p className="text-xs uppercase tracking-widest text-muted mb-3">
+                Featured Book
+              </p>
 
-            {/* DESCRIPTION */}
-            <p className="text-sm text-muted text-center leading-relaxed mb-6">
-              {book.description}
-            </p>
+              <h1 className="font-heading text-4xl mb-4">
+                {featuredBook.title}
+              </h1>
 
-            {/* CTA */}
-            <span className="block text-xs tracking-widest uppercase text-center opacity-70 group-hover:opacity-100 transition">
-              Buy / Read more →
-            </span>
-          </a>
-        ))}
+              <p className="text-muted max-w-md leading-relaxed mb-8">
+                {featuredBook.description}
+              </p>
 
-      </div>
+              <div className="flex gap-4">
+                <Link
+                  to={`/books/${featuredBook.id}`}
+                  className="border border-text px-6 py-2 text-sm hover:bg-frame/30 transition"
+                >
+                  Read more
+                </Link>
 
-      {/* ================= FOOT NOTE ================= */}
-      <p className="text-muted text-sm text-center max-w-xl mx-auto mt-24 leading-relaxed">
-        More work is currently in progress.  
-      </p>
+                <a
+                  href={featuredBook.buyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-text px-6 py-2 text-sm hover:bg-frame/30 transition"
+                >
+                  Buy
+                </a>
+              </div>
+            </div>
 
-    </section>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= BOOKS GRID ================= */}
+      <section className="max-w-6xl mx-auto px-8 py-24">
+        <h2 className="font-heading text-3xl mb-16">
+          Books & Publications
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {otherBooks.map((book) => (
+            <div
+              key={book.id}
+              className="border border-frame p-6 flex flex-col"
+            >
+              <img
+                src={book.image}
+                alt={book.title}
+                className="w-full aspect-[3/4] object-cover mb-6"
+              />
+
+              <h3 className="font-heading text-lg mb-3">
+                {book.title}
+              </h3>
+
+              <p className="text-sm text-muted leading-relaxed mb-6">
+                {book.description}
+              </p>
+
+              {/* BUTTONS */}
+              <div className="mt-auto flex gap-4">
+                <Link
+                  to={`/books/${book.id}`}
+                  className="flex-1 text-center border border-text px-4 py-2 text-sm hover:bg-frame/30 transition"
+                >
+                  Read more
+                </Link>
+
+                <a
+                  href={book.buyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center border border-text px-4 py-2 text-sm hover:bg-frame/30 transition"
+                >
+                  Buy
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 px-6 md:px-[7vw] py-14">
-      <div className="max-w-6xl mx-auto flex flex-col gap-12">
+    <footer className="border-t border-black/10 bg-bg">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 py-10">
 
-        {/* TOP */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* ================= TOP ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
           {/* LEFT */}
           <div className="max-w-md">
-            <h3 className="font-heading text-sm tracking-widest uppercase mb-4">
+            <h3 className="font-heading text-xs tracking-widest uppercase mb-4">
               Open for collaboration
             </h3>
 
@@ -27,17 +27,13 @@ export default function Footer() {
             >
               joshideepak2334@gmail.com
             </a>
-              <p className="text-xs tracking-widest text-muted uppercase">
-            © {new Date().getFullYear()} Deepak Joshi · All rights reserved
-          </p>
-
           </div>
 
           {/* RIGHT */}
-          <div className="flex flex-col gap-8 md:items-end">
+          <div className="flex flex-col gap-6 md:items-end">
 
-            {/* NAV LINKS */}
-            <nav className="flex gap-8 text-xs tracking-widest uppercase">
+            {/* NAV */}
+            <nav className="flex gap-6 text-xs tracking-widest uppercase">
               <Link to="/blogs" className="opacity-60 hover:opacity-100">Blogs</Link>
               <Link to="/poetry" className="opacity-60 hover:opacity-100">Poetry</Link>
               <Link to="/books" className="opacity-60 hover:opacity-100">Books</Link>
@@ -45,20 +41,20 @@ export default function Footer() {
             </nav>
 
             {/* SOCIAL */}
-            <div className="flex flex-col gap-3 md:items-end">
+            <div className="flex flex-col gap-2 md:items-end">
               <span className="text-xs tracking-widest uppercase text-muted">
                 Follow my work
               </span>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 <a
                   href="https://www.linkedin.com/in/deepak-j0shi/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="w-9 h-9 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
+                  className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
                 >
-                  <Linkedin size={15} strokeWidth={1.5} />
+                  <Linkedin size={13} strokeWidth={1.5} />
                 </a>
 
                 <a
@@ -66,9 +62,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-9 h-9 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
+                  className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
                 >
-                  <Instagram size={15} strokeWidth={1.5} />
+                  <Instagram size={13} strokeWidth={1.5} />
                 </a>
 
                 <a
@@ -76,9 +72,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Medium"
-                  className="w-9 h-9 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
+                  className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
                 >
-                  <PenLine size={15} strokeWidth={1.5} />
+                  <PenLine size={13} strokeWidth={1.5} />
                 </a>
               </div>
             </div>
@@ -86,7 +82,13 @@ export default function Footer() {
           </div>
         </div>
 
-      
+        {/* ================= DIVIDER ================= */}
+        <div className="border-t border-frame my-6"></div>
+
+        {/* ================= BOTTOM ================= */}
+        <p className="text-xs tracking-widest text-muted uppercase text-center md:text-left">
+          © {new Date().getFullYear()} Deepak Joshi · All rights reserved
+        </p>
 
       </div>
     </footer>
