@@ -13,6 +13,8 @@ This website showcases my **blogs, poetry, books, and personal writing journey**
 
 <img width="1366" height="648" alt="image" src="https://github.com/user-attachments/assets/4fc64b00-7e1d-49c2-8c24-ee031105d762" />
 
+<img width="1366" height="642" alt="image" src="https://github.com/user-attachments/assets/4020d18d-bc9d-4beb-9c5c-9cf8c0eecc5a" />
+
 <img width="1366" height="650" alt="image" src="https://github.com/user-attachments/assets/24915cc9-9dcd-4052-9f18-6be07276856c" />
 
 ---
