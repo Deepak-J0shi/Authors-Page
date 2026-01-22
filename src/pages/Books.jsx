@@ -1,16 +1,18 @@
 import { books } from "../data/books";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import booksHero from "../assets/books-heroimage.jpg";
 
 export default function Books() {
   const featuredBook = books[2];
   const otherBooks = books;
 
+  const [showNotice, setShowNotice] = useState(false);
+
   return (
     <>
       {/* ================= HERO ================= */}
       <section className="relative w-full min-h-[60vh] flex items-center">
-        {/* background */}
         <img
           src={booksHero}
           alt="Books background"
@@ -18,7 +20,6 @@ export default function Books() {
         />
         <div className="absolute inset-0 bg-bg/80" />
 
-        {/* content */}
         <div className="relative max-w-6xl mx-auto px-8 py-24 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
@@ -55,15 +56,31 @@ export default function Books() {
                   Read more
                 </Link>
 
-                <a
-                  href={featuredBook.buyLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-text px-6 py-2 text-sm hover:bg-frame/30 transition"
-                >
-                  Buy
-                </a>
+                {featuredBook.isUpcoming ? (
+                  <button
+                    onClick={() => setShowNotice(true)}
+                    className="border border-text px-6 py-2 text-sm hover:bg-frame/30 transition"
+                  >
+                    Buy
+                  </button>
+                ) : (
+                  <a
+                    href={featuredBook.buyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-text px-6 py-2 text-sm hover:bg-frame/30 transition"
+                  >
+                    Buy
+                  </a>
+                )}
               </div>
+
+              {showNotice && (
+                <p className="mt-4 text-sm text-muted max-w-md">
+                  This book is currently in the publishing process and will be
+                  available on Amazon soon.
+                </p>
+              )}
             </div>
 
           </div>
@@ -105,14 +122,23 @@ export default function Books() {
                   Read more
                 </Link>
 
-                <a
-                  href={book.buyLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border border-text px-4 py-2 text-sm hover:bg-frame/30 transition"
-                >
-                  Buy
-                </a>
+                {book.isUpcoming ? (
+                  <button
+                    onClick={() => setShowNotice(true)}
+                    className="flex-1 border border-text px-4 py-2 text-sm hover:bg-frame/30 transition"
+                  >
+                    Buy
+                  </button>
+                ) : (
+                  <a
+                    href={book.buyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center border border-text px-4 py-2 text-sm hover:bg-frame/30 transition"
+                  >
+                    Buy
+                  </a>
+                )}
               </div>
             </div>
           ))}

@@ -1,10 +1,12 @@
-// src/components/Footer.jsx
 import { Linkedin, Instagram, PenLine } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-bg">
+    <footer
+      className="border-t border-black/10 bg-bg"
+      role="contentinfo"
+    >
       <div className="max-w-6xl mx-auto px-6 md:px-8 py-10">
 
         {/* ================= TOP ================= */}
@@ -23,6 +25,7 @@ export default function Footer() {
 
             <a
               href="mailto:joshideepak2334@gmail.com"
+              aria-label="Email Deepak Joshi"
               className="text-sm underline underline-offset-4 hover:opacity-80"
             >
               joshideepak2334@gmail.com
@@ -32,15 +35,18 @@ export default function Footer() {
           {/* RIGHT */}
           <div className="flex flex-col gap-6 md:items-end">
 
-            {/* NAV */}
-            <nav className="flex gap-6 text-xs tracking-widest uppercase">
+            {/* NAVIGATION */}
+            <nav
+              className="flex gap-6 text-xs tracking-widest uppercase"
+              aria-label="Footer navigation"
+            >
               <Link to="/blogs" className="opacity-60 hover:opacity-100">Blogs</Link>
               <Link to="/poetry" className="opacity-60 hover:opacity-100">Poetry</Link>
               <Link to="/books" className="opacity-60 hover:opacity-100">Books</Link>
               <Link to="/contact" className="opacity-60 hover:opacity-100">Contact</Link>
             </nav>
 
-            {/* SOCIAL */}
+            {/* SOCIAL LINKS */}
             <div className="flex flex-col gap-2 md:items-end">
               <span className="text-xs tracking-widest uppercase text-muted">
                 Follow my work
@@ -50,8 +56,8 @@ export default function Footer() {
                 <a
                   href="https://www.linkedin.com/in/deepak-j0shi/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
+                  rel="me noopener noreferrer"
+                  aria-label="Deepak Joshi on LinkedIn"
                   className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
                 >
                   <Linkedin size={13} strokeWidth={1.5} />
@@ -60,8 +66,8 @@ export default function Footer() {
                 <a
                   href="https://www.instagram.com/noctur.ne__"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
+                  rel="me noopener noreferrer"
+                  aria-label="Deepak Joshi on Instagram"
                   className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
                 >
                   <Instagram size={13} strokeWidth={1.5} />
@@ -70,8 +76,8 @@ export default function Footer() {
                 <a
                   href="https://medium.com/@Deepak-J0shi"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Medium"
+                  rel="me noopener noreferrer"
+                  aria-label="Deepak Joshi on Medium"
                   className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
                 >
                   <PenLine size={13} strokeWidth={1.5} />

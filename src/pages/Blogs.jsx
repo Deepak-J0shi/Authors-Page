@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { sanityClient } from "../sanityClient";
 import blogsHero from "../assets/deepak-blogs.jpg";
 
@@ -35,18 +36,38 @@ export default function Blogs() {
 
   return (
     <>
+      {/* ================= SEO ================= */}
+      <Helmet>
+        <title>Blogs & Essays by Deepak Joshi | Poetry, Travel & Reflection</title>
+        <meta
+          name="description"
+          content="Read blogs and personal essays by Deepak Joshi, an Indian poet and author. Writing on love, nature, memory, travel, healing, and lived experience."
+        />
+        <link
+          rel="canonical"
+          href="https://authors-page-iota.vercel.app/blogs"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Blogs by Deepak Joshi" />
+        <meta
+          property="og:description"
+          content="Personal essays and reflective writing exploring love, nature, memory, and human experience."
+        />
+      </Helmet>
+
       {/* ================= HERO ================= */}
-      <section className="relative w-full h-[55vh]">
+      <section className="relative w-full h-[55vh]" aria-hidden="true">
         <img
           src={blogsHero}
-          alt="Writing and reflection"
+          alt="Writing desk and reflective atmosphere"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-bg/80"></div>
 
         <div className="relative max-w-6xl mx-auto px-8 h-full flex flex-col justify-center">
           <h1 className="font-heading text-4xl md:text-5xl mb-4">
-            Read My Blogs
+            Blogs & Essays
           </h1>
           <p className="text-muted max-w-2xl leading-relaxed">
             Personal essays, travel reflections, and contemplative writing
@@ -56,7 +77,10 @@ export default function Blogs() {
       </section>
 
       {/* ================= CONTENT ================= */}
-      <section className="max-w-6xl mx-auto px-8 py-24">
+      <section
+        className="max-w-6xl mx-auto px-8 py-24"
+        aria-label="Blog articles"
+      >
 
         {/* SEARCH + TAGS */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-16">
@@ -77,6 +101,7 @@ export default function Blogs() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="border border-frame px-4 py-2 text-sm w-full md:w-64 bg-bg focus:outline-none"
+            aria-label="Search blog posts"
           />
         </div>
 
@@ -95,7 +120,7 @@ export default function Blogs() {
                   {blog.coverImage && (
                     <img
                       src={blog.coverImage}
-                      alt={blog.title}
+                      alt={`Blog post titled "${blog.title}" by Deepak Joshi`}
                       className="w-full aspect-[3/4] object-cover mb-5"
                     />
                   )}
@@ -131,9 +156,12 @@ export default function Blogs() {
           </div>
 
           {/* ================= RIGHT: STICKY SIDEBAR ================= */}
-          <aside className="hidden lg:block sticky top-28 self-start">
+          <aside
+            className="hidden lg:block sticky top-28 self-start"
+            aria-label="More blog posts"
+          >
             <h3 className="font-heading text-lg mb-8">
-              More Blogs
+              Recent Writings
             </h3>
 
             <div className="space-y-6">
@@ -146,7 +174,7 @@ export default function Blogs() {
                   {post.coverImage && (
                     <img
                       src={post.coverImage}
-                      alt={post.title}
+                      alt={`Cover image for blog "${post.title}"`}
                       className="w-16 h-20 object-cover border border-frame"
                     />
                   )}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { sanityClient } from "../sanityClient";
 import poetryHero from "../assets/poetry-hero.jpg";
 
@@ -30,11 +31,31 @@ export default function Poetry() {
 
   return (
     <>
+      {/* ================= SEO ================= */}
+      <Helmet>
+        <title>Poems by Deepak Joshi | Love, Memory & Reflection</title>
+        <meta
+          name="description"
+          content="Read poems by Deepak Joshi, an Indian poet writing on love, memory, silence, nature, and emotional reflection."
+        />
+        <link
+          rel="canonical"
+          href="https://authors-page-iota.vercel.app/poetry"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Poetry by Deepak Joshi" />
+        <meta
+          property="og:description"
+          content="A collection of poems exploring love, memory, silence, and lived emotion."
+        />
+      </Helmet>
+
       {/* ================= HERO ================= */}
-      <section className="relative w-full h-[55vh]">
+      <section className="relative w-full h-[55vh]" aria-hidden="true">
         <img
           src={poetryHero}
-          alt="Poetry background"
+          alt="Atmospheric background representing poetry and reflection"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-bg/80"></div>
@@ -52,7 +73,10 @@ export default function Poetry() {
       </section>
 
       {/* ================= CONTENT ================= */}
-      <section className="max-w-6xl mx-auto px-8 py-24">
+      <section
+        className="max-w-6xl mx-auto px-8 py-24"
+        aria-label="Poetry collection"
+      >
         {loading && (
           <p className="text-center text-muted tracking-wide">
             Gathering verses…
@@ -74,7 +98,7 @@ export default function Poetry() {
                     {poem.coverImage && (
                       <img
                         src={poem.coverImage}
-                        alt={poem.title}
+                        alt={`Poem titled "${poem.title}" by Deepak Joshi`}
                         className="w-full aspect-[3/4] object-cover mb-5"
                       />
                     )}
@@ -104,9 +128,12 @@ export default function Poetry() {
             </div>
 
             {/* ================= RIGHT: STICKY SIDEBAR ================= */}
-            <aside className="hidden lg:block sticky top-28 self-start">
+            <aside
+              className="hidden lg:block sticky top-28 self-start"
+              aria-label="More poems"
+            >
               <h3 className="font-heading text-lg mb-8">
-                More Poems
+                Recent Poems
               </h3>
 
               <div className="space-y-6">
@@ -119,7 +146,7 @@ export default function Poetry() {
                     {poem.coverImage && (
                       <img
                         src={poem.coverImage}
-                        alt={poem.title}
+                        alt={`Cover image for poem "${poem.title}"`}
                         className="w-16 h-20 object-cover border border-frame"
                       />
                     )}
