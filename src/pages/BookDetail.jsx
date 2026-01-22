@@ -23,7 +23,7 @@ export default function BookDetail() {
   return (
     <>
       {/* ================= HERO / BANNER ================= */}
-      <section className="relative w-full h-[55vh]">
+      <section className="relative w-full h-[70vh]">
         {/* soft background */}
         <div className="absolute inset-0 bg-frame/40"></div>
 

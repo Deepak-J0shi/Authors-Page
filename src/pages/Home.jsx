@@ -76,7 +76,7 @@ export default function Home() {
                 <img
                   src={book3}
                   alt="I Was Never Me After You"
-                  className="h-[240px] w-auto object-cover"
+                  className="h-[300px] w-auto object-cover"
                 />
               </div>
             </div>
