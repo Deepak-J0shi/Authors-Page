@@ -11,37 +11,34 @@ export const booksBannerText =
   "A collection of published poetry books and anthologies featuring my work as an author and contributor, exploring love, memory, emotional growth, and lived experience.";
 
 export const books = [
-  {
-    id: "yellow-days",
-    title: "Yellow Days",
-    subtitle: "A Poetry Anthology",
-    image: book1,
+
+ {
+    id: "i-was-never-me-after-you",
+    title: "I Was Never Me After You",
+    subtitle: "Poems & Reflections on Love and Loss",
+    image: book3,
 
     description:
-      "A collaborative poetry anthology that celebrates moments of joy, warmth, and emotional brightness found in everyday life.",
+      "A deeply personal poetry collection exploring love, loss, grief, and the emotional transformations shaped by time.",
 
     longDescription:
-      "Yellow Days is a collaborative poetry anthology published by Writer’s Pocket that explores the quiet, joyful moments that add warmth and color to everyday life. Inspired by the symbolism of the color yellow, the collection reflects on emotions associated with happiness, comfort, laughter, nostalgia, and emotional connection.\n\nThe poems in Yellow Days capture simple yet meaningful experiences—laughing with friends, sharing moments with family, witnessing innocence, finding joy in small successes, or spending time doing what one loves. Rather than grand declarations, the anthology focuses on subtle emotional highs that often go unnoticed but leave lasting impressions.\n\nAs a contributing poet, my work in this anthology reflects themes of emotional awareness, lived experience, and the gentle beauty of ordinary moments. Yellow Days invites readers to pause, reflect, and embrace those fleeting instances of warmth that quietly brighten our lives.",
+      "I Was Never Me After You is an upcoming poetry collection published by Writer’s Pocket, scheduled for release in 2026. The book is a deeply personal exploration of love, separation, grief, and emotional change, written through poetry and reflective prose.\n\nRather than offering closure, the collection sits with unresolved emotions—those quiet moments after loss where identity begins to shift. The poems explore how love alters the self, how absence reshapes memory, and how time leaves subtle imprints on emotional landscapes.\n\nWritten in a minimalist and introspective style, the book focuses on emotional honesty, restraint, and vulnerability. It is intended for readers who find resonance in introspection and lived truth.",
 
-    metaTitle: "Yellow Days | Poetry Anthology by Writer’s Pocket",
+    metaTitle: "I Was Never Me After You | Poetry Book by Deepak Joshi",
     metaDescription:
-      "Yellow Days is a poetry anthology celebrating joy, warmth, and everyday emotional moments, featuring contributions by Deepak Joshi.",
+      "I Was Never Me After You is an upcoming poetry book by Deepak Joshi exploring love, loss, grief, and emotional transformation.",
 
-    genre: "Poetry Anthology",
-    role: "Contributor",
+    genre: "Poetry",
+    role: "Author",
     publisher: "Writer’s Pocket",
-    year: 2024,
+    year: 2026,
     language: "English",
-    pages: 211,
-
-    isbn10: "9360838276",
-    isbn13: "978-9360838270",
-
-    readingAge: "15 years and above",
     country: "India",
 
-    buyLink:
-      "https://www.amazon.in/Poetry-book-Yellow-Writers-Pocket/dp/9360838276",
+    buyLink: "https://authors-page-iota.vercel.app/books",
+
+    // 🔴 IMPORTANT FLAG
+    isUpcoming: true,
   },
 
   {
@@ -77,32 +74,38 @@ export const books = [
       "https://www.amazon.in/dp/8197015538",
   },
 
-  {
-    id: "i-was-never-me-after-you",
-    title: "I Was Never Me After You",
-    subtitle: "Poems & Reflections on Love and Loss",
-    image: book3,
+
+{
+    id: "yellow-days",
+    title: "Yellow Days",
+    subtitle: "A Poetry Anthology",
+    image: book1,
 
     description:
-      "A deeply personal poetry collection exploring love, loss, grief, and the emotional transformations shaped by time.",
+      "A collaborative poetry anthology that celebrates moments of joy, warmth, and emotional brightness found in everyday life.",
 
     longDescription:
-      "I Was Never Me After You is an upcoming poetry collection published by Writer’s Pocket, scheduled for release in 2026. The book is a deeply personal exploration of love, separation, grief, and emotional change, written through poetry and reflective prose.\n\nRather than offering closure, the collection sits with unresolved emotions—those quiet moments after loss where identity begins to shift. The poems explore how love alters the self, how absence reshapes memory, and how time leaves subtle imprints on emotional landscapes.\n\nWritten in a minimalist and introspective style, the book focuses on emotional honesty, restraint, and vulnerability. It is intended for readers who find resonance in introspection and lived truth.",
+      "Yellow Days is a collaborative poetry anthology published by Writer’s Pocket that explores the quiet, joyful moments that add warmth and color to everyday life. Inspired by the symbolism of the color yellow, the collection reflects on emotions associated with happiness, comfort, laughter, nostalgia, and emotional connection.\n\nThe poems in Yellow Days capture simple yet meaningful experiences—laughing with friends, sharing moments with family, witnessing innocence, finding joy in small successes, or spending time doing what one loves. Rather than grand declarations, the anthology focuses on subtle emotional highs that often go unnoticed but leave lasting impressions.\n\nAs a contributing poet, my work in this anthology reflects themes of emotional awareness, lived experience, and the gentle beauty of ordinary moments. Yellow Days invites readers to pause, reflect, and embrace those fleeting instances of warmth that quietly brighten our lives.",
 
-    metaTitle: "I Was Never Me After You | Poetry Book by Deepak Joshi",
+    metaTitle: "Yellow Days | Poetry Anthology by Writer’s Pocket",
     metaDescription:
-      "I Was Never Me After You is an upcoming poetry book by Deepak Joshi exploring love, loss, grief, and emotional transformation.",
+      "Yellow Days is a poetry anthology celebrating joy, warmth, and everyday emotional moments, featuring contributions by Deepak Joshi.",
 
-    genre: "Poetry",
-    role: "Author",
+    genre: "Poetry Anthology",
+    role: "Contributor",
     publisher: "Writer’s Pocket",
-    year: 2026,
+    year: 2024,
     language: "English",
+    pages: 211,
+
+    isbn10: "9360838276",
+    isbn13: "978-9360838270",
+
+    readingAge: "15 years and above",
     country: "India",
 
-    buyLink: "https://authors-page-iota.vercel.app/books",
-
-    // 🔴 IMPORTANT FLAG
-    isUpcoming: true,
+    buyLink:
+      "https://www.amazon.in/Poetry-book-Yellow-Writers-Pocket/dp/9360838276",
   },
+
 ];

@@ -4,7 +4,7 @@ import { useState } from "react";
 import booksHero from "../assets/books-heroimage.jpg";
 
 export default function Books() {
-  const featuredBook = books[2];
+  const featuredBook = books[0];
   const otherBooks = books;
 
   const [showNotice, setShowNotice] = useState(false);
