@@ -35,10 +35,10 @@ export const books = [
     language: "English",
     country: "India",
 
-    buyLink: "https://authors-page-iota.vercel.app/books",
+    buyLink: "https://amzn.in/d/0gEXMKjK",
 
-    // 🔴 IMPORTANT FLAG
-    isUpcoming: true,
+    
+    isUpcoming: false,
   },
 
   {
