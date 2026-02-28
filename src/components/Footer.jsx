@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, PenLine } from "lucide-react";
+import { Linkedin, Instagram, PenLine, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -44,6 +44,15 @@ export default function Footer() {
               <Link to="/poetry" className="opacity-60 hover:opacity-100">Poetry</Link>
               <Link to="/books" className="opacity-60 hover:opacity-100">Books</Link>
               <Link to="/contact" className="opacity-60 hover:opacity-100">Contact</Link>
+
+              <a
+                href="https://portfolio-main-tan-three.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-60 hover:opacity-100"
+              >
+                Tech
+              </a>
             </nav>
 
             {/* SOCIAL LINKS */}
@@ -81,6 +90,16 @@ export default function Footer() {
                   className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
                 >
                   <PenLine size={13} strokeWidth={1.5} />
+                </a>
+
+                <a
+                  href="https://portfolio-main-tan-three.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Deepak Joshi Technical Portfolio"
+                  className="w-8 h-8 flex items-center justify-center border border-text rounded-full hover:bg-black hover:text-white transition"
+                >
+                  <Globe size={13} strokeWidth={1.5} />
                 </a>
               </div>
             </div>
